@@ -1,13 +1,16 @@
-public class Book extends Publication {
+
+
+public class Book extends Publication implements Borrowable {
     private String isbn;
-    private int numbreOfPages;
 
     public Book(String title, String author, String publisher,
-                int yearOfPublication, String isbn, int numbreOfPages) {
+                int yearOfPublication, String isbn)
+    {
         super(title, author, publisher, yearOfPublication);
         this.isbn = isbn;
-        this.numbreOfPages = numbreOfPages;
+
     }
+
 
     @Override
     public void showDetails() {
@@ -15,5 +18,19 @@ public class Book extends Publication {
         System.out.println("ISBN: "+isbn);
     }
 
-    
+
+    @Override
+    public void borrowItem() {
+
+    }
+
+    @Override
+    public void returnItem() {
+
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return false;
+    }
 }
